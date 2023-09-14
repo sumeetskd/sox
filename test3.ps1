@@ -1,4 +1,4 @@
-$xlCellTypeLastCell = 2
+$xlCellTypeLastCell = 11 # done change
 $startRow = 1
 $startCol = 1
 $endCol = 3
@@ -8,7 +8,7 @@ $wb = $excel.workbooks.open("C:\Users\sumee\Desktop\powershell\sox\excel.xlsx")
 
 
 $sh = $wb.Sheets.Item(1)
-$endRow = $sh.UsedRange.SpecialCells($xlCellTypeLastCell).Row
+$endRow = $sh.UsedRange.SpecialCells($xlCellTypeLastCell).Row   # last row no. contain the value will be fetched
 Write-Host "End Row Value - $($endRow)"
 $sheetTitle = "Test"
 $rangeAddress = $sh.Cells.Item($startRow, $startCol).Address() + ":" + $sh.Cells.Item($endRow, $endCol).Address()
